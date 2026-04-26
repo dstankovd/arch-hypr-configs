@@ -1,17 +1,25 @@
+@define-color bg0 rgba(40, 40, 40, 0.92);
+@define-color bg0_solid #282828;
+@define-color bg3 #665c54;
+@define-color fg0 #fbf1c7;
+@define-color fg1 #ebdbb2;
+@define-color fg2 #d5c4a1;
+@define-color red #fb4934;
+@define-color green #b8bb26;
+@define-color yellow #fabd2f;
+
 * {
     font-family: "Cascadia Mono", monospace;
     font-size: 14px;
     min-height: 0;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 window#waybar {
-    background-color: rgba(28, 27, 26, 0.85);
-    color: #CECDC3;
+    background-color: @bg0;
+    color: @fg1;
 }
-
-/* ── Workspaces ── */
 
 #workspaces {
     padding: 0 4px;
@@ -24,54 +32,47 @@ window#waybar {
     box-shadow: none;
     min-width: 0;
     padding: 0 5px;
-    color: #403E3C;
-}
-
-#workspaces button:not(.empty):not(.focused) {
-    color: #6F6E69;
-}
-
-#workspaces button.focused {
-    color: #CECDC3;
+    color: @bg3;
 }
 
 #workspaces button.urgent {
-    color: #AF3029;
+    color: @red;
 }
 
-/* ── Sep + Window title ── */
+#workspaces button:not(.empty):not(.focused):not(.active) {
+    color: @fg2;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: @fg1;
+}
 
 #custom-sep {
     padding: 0 4px;
-    color: #343331;
+    color: @bg0_solid;
 }
 
 #window {
+    color: @fg2;
     font-size: 13px;
-    color: #575653;
 }
-
-/* ── Clock ── */
 
 #clock {
+    color: @fg0;
     font-size: 14px;
-    color: #B7B5AC;
 }
-
-/* ── Media ── */
 
 #mpris {
     padding: 0 8px;
     font-size: 13px;
     font-style: italic;
-    color: #6F6E69;
+    color: @fg2;
 }
 
 #mpris.paused {
-    color: #575653;
+    color: @bg3;
 }
-
-/* ── Right modules ── */
 
 #cpu,
 #memory,
@@ -81,7 +82,7 @@ window#waybar {
 #language,
 #battery {
     padding: 0 8px;
-    color: #6F6E69;
+    color: @fg2;
 }
 
 #cpu label,
@@ -89,21 +90,21 @@ window#waybar {
 #pulseaudio label,
 #backlight label,
 #battery label {
-    color: #575653;
+    color: @bg3;
 }
 
 #pulseaudio.muted {
-    color: #403E3C;
+    color: @bg3;
 }
 
 #battery.charging {
-    color: #879A39;
+    color: @green;
 }
 
 #battery.critical:not(.charging) {
-    color: #AF3029;
+    color: @red;
 }
 
 #network.disconnected {
-    color: #AF3029;
+    color: @red;
 }

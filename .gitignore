@@ -1,1 +1,3 @@
 .install/*
+!.install/link-configs.sh
+!.install/setup-keyring.sh
