@@ -95,6 +95,6 @@
         "format-plugged": "<span size='small'>bat </span>{capacity}%",
         "tooltip": true,
         "tooltip-format": "{time} remaining • {power}W",
-        "on-click": "alacritty --title 'Power Profile' -e ~/.config/scripts/power-profile-picker.sh"
+        "on-click": "hyprctl dispatch exec \"[float; center; size 720 260] ghostty --title='Power Profile' -e bash ~/.config/scripts/power-profile.sh\""
     }
 }

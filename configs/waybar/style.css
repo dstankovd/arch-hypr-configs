@@ -28,6 +28,7 @@ window#waybar {
 #workspaces button {
     background: transparent;
     border: none;
+    border-bottom: 2px solid transparent;
     border-radius: 0;
     box-shadow: none;
     min-width: 0;
@@ -46,6 +47,7 @@ window#waybar {
 #workspaces button.focused,
 #workspaces button.active {
     color: @fg1;
+    border-bottom-color: @yellow;
 }
 
 #custom-sep {
